@@ -720,7 +720,7 @@ JS;
 			}
 
 			$newVersion = ((int)$record->Version) + 1;
-			FormResponse::add("\$('Form_EditForm_Version').value = {$newVersion};");
+			FormResponse::add("if(\$('Form_EditForm_Version')) \$('Form_EditForm_Version').value = {$newVersion};");
 			
 			$this->extend('onAfterSave', $record);
 			
